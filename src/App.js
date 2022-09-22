@@ -1,25 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import CartWidget js from './components/CartWidget';
+import ItemListContainer from './components/ItemListContainer';
+
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+    <NavBar/>
+    <Buttom variant="contained" color="primary">
+      botom
+    </Buttom>
+    <Buttom variant="contained" color="secondary">
+      botom
+    </Buttom>
+    <Typography variant="h1" color="initial">
+
+    lorem imsut
+    </Typography> 
+    </ThemeProvider>
+);
+
+
 }
 
 export default App;
