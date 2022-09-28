@@ -21,7 +21,7 @@ function App() {
     </Buttom>
     <Typography variant="h1" color="initial">
 
-    lorem imsut
+    loremm imsut
     </Typography> 
     </ThemeProvider>
 );
