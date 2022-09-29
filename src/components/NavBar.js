@@ -1,41 +1,40 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const useStyle = makeStyles((theme) => ({
-  offset: {
-    ...theme.mixins.toolbar, // min-height: 56px;
-    marginBottom: "1rem", // margen opcional
-  },
-}));
-
-const Navbar = () => {
-  const classes = useStyle();
-
+function CollapsibleExample() {
   return (
-    <React.Fragment>
-      <AppBar position="fixed" color="primary">
-        <Toolbar>
-          <IconButton
-          color="inherit"
-          aria-label="menu"
-          className={classes.menuButton}
-          >
-            <MenuIcon/>
-          </IconButton>
-          <Typography variant="h6">bluuweb</Typography>
-        <Button variant="text" color="inherit">
-          Login
-        </Button>
-        
-        
-        </Toolbar>
-      </AppBar>
-      <div className={classes.offset}></div>
-    </React.Fragment>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">libreriaNB</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">Libreria</Nav.Link>
+            <Nav.Link href="#pricing">Jugueteria</Nav.Link>
+            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Electronica</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Productos
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Nosotros</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Contactos
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">Mas Info</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Dank memes
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
 
-export default Navbar;
+export default CollapsibleExample;
